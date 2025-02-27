@@ -1,1 +1,1 @@
-#EXECICIOS PARA PRATICA DE PROGRAMÇÃO PARA DISPOSITIVOS MOVEIS
+# atividades para pratica de desenvolvimento de dispositivos moveis
