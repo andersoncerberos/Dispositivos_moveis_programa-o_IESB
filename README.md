@@ -1,1 +1,1 @@
-# atividades para pratica de desenvolvimento de dispositivos moveis
+# Atividades para pratica de desenvolvimento de dispositivos moveis
