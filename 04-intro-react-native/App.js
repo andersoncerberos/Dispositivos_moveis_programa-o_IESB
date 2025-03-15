@@ -21,15 +21,12 @@ export default function App() {
       <Text>{2 + 2}</ Text>
       <Button title='clicar' onPress={alerta} ></Button>
 
-      <Image source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Death_star1.png" }}
+      <Image source={{ uri: "https://static.wikia.nocookie.net/ptstarwars/images/e/eb/LasercannonDSI.png/revision/latest?cb=20160421171030" }}
         style = {{
           height: 300,
           width: 300
         }}
       />
-
-
-
     </View>
   );
 }
