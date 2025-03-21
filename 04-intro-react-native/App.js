@@ -15,8 +15,12 @@ export default function App() {
 
   //retorno do JSX
   return (
+
+
     <ScrollView>
+
       <View style={styles.container}>
+
         <StatusBar style="auto" />
         <Text style={styles.textogrande}>frota do imperio galatico</Text>
 
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop:40
+    paddingTop: 40
 
   },
   textogrande: {
