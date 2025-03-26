@@ -13,10 +13,18 @@ export default function App() {
       <JavaCript />
 
       <Perfil
-        nome = "anderson"
-        sobrenome = "carlos"
-        idade = {15}
+        nome="anderson"
+        sobrenome="carlos"
+        idade={15}
       />
+
+      <Perfil
+        nome="eliane"
+        sobrenome="lima"
+        idade={65}
+      />
+
+
 
 
     </View>
