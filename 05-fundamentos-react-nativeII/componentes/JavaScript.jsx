@@ -4,7 +4,7 @@ import React from 'react'
 export default function JavaScript() {
 //logica do componente
     const nome = "JavaScript";
-    const idade = 20;
+    const idade = 15;
 
     function checaridade(){
         console.log("chamou a fuinção checaridade")
@@ -28,7 +28,7 @@ export default function JavaScript() {
             <Text style={styles.texto}>nome:{nome}</Text>
             <Text style={styles.texto}>idade:{idade}</Text>
             <Text style={styles.texto}>idade somada com 40 :{idade+40}</Text>
-            <Text style={styles.texto}>20+{checaridade()}</Text>
+            <Text style={styles.texto}>15 {checaridade()}</Text>
 
             <Button title='ENVIAR'onPress={alerta} color={"red"}></Button>
 
