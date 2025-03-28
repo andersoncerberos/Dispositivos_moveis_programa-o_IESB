@@ -8,7 +8,7 @@ export default function ListaComponente() {
     return (
         <View style={styles.container}>
 
-            {listacarros.map(
+            {/* {listacarros.map(
                 (carro) => <Text>{carro}</Text>
             )}
 
@@ -26,7 +26,7 @@ export default function ListaComponente() {
                         </View>
                     )
                 }
-            )}
+            )} */}
 
         </View>
     )
