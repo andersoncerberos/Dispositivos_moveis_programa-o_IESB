@@ -1,48 +1,52 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, } from 'react-native';
 import PrimeiroComponente from './componentes/PrimeiroComponente.jsx';
 import JavaScript from './componentes/JavaScript.jsx';
 import Perfil from './componentes/Perfil.jsx';
+import Atleta from './componentes/Atleta.jsx';
 import ListaComponente from './componentes/ListaComponente.jsx';
 export default function App() {
+
+  const listaatletasv = [
+    {
+      nome: "NEYMAR",
+      idade: 30,
+      numero: 10,
+      imagem: "https://i.pinimg.com/236x/65/92/d2/6592d22f05d29398784337cd02a37e26.jpg"
+    },
+    {
+      nome: "leo messi",
+      idade: 40,
+      numero: 10,
+      imagem: ""
+    }
+  ]
   return (
 
-    <View style={styles.container}>
-      <StatusBar style="auto" />
+    <ScrollView>
+      <View style={styles.container}>
+        <StatusBar style="auto" />
 
-      <ListaComponente/>
-
-      {/* <Perfil
-
-        nome="anderson"
-        idade={15}
-        telefone="123456"
-        email="anderson@com"
-
-      />
-
-      <Perfil
-
-        nome="eliane"
-        idade={45}
-        telefone="12345678"
-        email="eliane@com"
-
-      />
-
-      <Perfil
-
-        nome="taynara"
-        idade={26}
-        telefone="123456789"
-        email="tay@com"
-
-      /> */}
+        {listaatletasv.map(
+          atleta => {
+            return(
+              <Atleta
+                nome={atleta.nome}
+                idade={atleta.idade}
+                numero={atleta.numero}
+                imagem={atleta.imagem}
+              />
+            )
+          }
+        )
+        }
 
 
 
 
-    </View>
+
+      </View>
+    </ScrollView>
 
   );
 }
@@ -51,7 +55,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
 });
