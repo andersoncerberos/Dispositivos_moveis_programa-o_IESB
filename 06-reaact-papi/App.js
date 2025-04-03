@@ -1,85 +1,124 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, ScrollView, Image, FlatList } from 'react-native';
 import { PaperProvider, Card, Title, Paragraph, Text, Button, Divider } from 'react-native-paper';
-
+import Estado from './componentes/Estado';
 
 export default function App() {
 
-  const listacarros = [
+  const listaEstadosMunicipios = [
     {
-      titulo: "carro 1",
-      descricao: "descricao do carro 1",
-      imagem: "https://i.pinimg.com/236x/13/8f/06/138f0675237eec3563d1475ec63f7262.jpg"
+      nome: 'Rio de Janeiro',
+      sigla: 'RJ',
+      imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      municipios: [
+        {
+          nome: 'Rio de Janeiro',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Niterói',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Petrópolis',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Angra dos Reis',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Cabo Frio',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        }
+      ]
     },
     {
-      titulo: "carro 2",
-      descricao: "descricao do carro 2",
-      imagem: "https://i.pinimg.com/236x/9d/8b/40/9d8b4069a1988d8a595a6d55f12f9a78.jpg"
+      nome: 'São Paulo',
+      sigla: 'SP',
+      imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+      descricao: 'São Paulo é o estado mais populoso do Brasil, com uma economia diversificada e forte.',
+      municipios: [
+        {
+          nome: 'São Paulo',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Campinas',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Santos',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Sorocaba',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Ribeirão Preto',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        }
+      ]
     },
     {
-      titulo: "carro 3",
-      descricao: "descricao do carro 3",
-      imagem: "https://i.pinimg.com/236x/ca/64/33/ca64331fdcc52074b299c577f880746c.jpg"
-    },
-    {
-      titulo: "carro 4",
-      descricao: "descricao do carro 4",
-      imagem: "https://i.pinimg.com/474x/fe/62/19/fe6219b44d432bdc62aa4df12b74b6ae.jpg"
+      nome: 'Minas Gerais',
+      sigla: 'MG',
+      imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+      descricao: 'Minas Gerais é conhecido por sua rica história, culinária e belas paisagens.',
+      municipios: [
+        {
+          nome: 'Belo Horizonte',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Ouro Preto',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Uberlândia',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Juiz de Fora',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        },
+        {
+          nome: 'Montes Claros',
+          imagem: 'https://i.pinimg.com/474x/2d/17/10/2d17104202b6a27f3de15c3128df0033.jpg',
+        }
+      ]
     }
   ]
-
   return (
-    <ScrollView>
+
     <PaperProvider>
       <View style={styles.container}>
         <StatusBar style="auto" />
 
-        <FlatList
-          data={listacarros}
-          renderItem={({ item }) => (
-            <Card style={{ marginBottom: 10 }}>
-              <Card.Content>
-                <Title>{item.titulo}</Title>
-                <Paragraph>{item.descricao}</Paragraph>
-              </Card.Content>
-              <Card.Cover source={{ uri: item.imagem }} />
-            </Card>
-          )}
-        />
-
-        <FlatList style={{ paddingTop: 20 }}
-        
-          data={listacarros}
-          renderItem={({ item }) => (
-            <Card style={{ marginBottom: 10, height: 300, }}>
-              <Card.Content>
-                <Title>{item.titulo}</Title>
-                <Paragraph>{item.descricao}</Paragraph>
-                <Card.Cover source={{ uri: item.imagem }} />
-              </Card.Content>
-            </Card>
-          )}
-
-        />
+        <Text variant="displayLarge">Lista de estados</Text>
 
         <FlatList
-          horizontal
-          data={listacarros}
+          data={listaEstadosMunicipios}
           renderItem={({ item }) => (
-            <Card style={{ marginBottom: 10, height: 500 }}>
-              <Card.Content>
-                <Title>{item.titulo}</Title>
-                <Paragraph>{item.descricao}</Paragraph>
-              </Card.Content>
-              <Card.Cover source={{ uri: item.imagem }} />
-            </Card>
+
+            <Estado
+              nome={item.nome}
+              sigla={item.sigla}
+              imagem={item.imagem}
+              descricao={item.descricao}
+              municipio={item.municipios}
+
+            />
+
           )}
         />
 
       </View>
 
     </PaperProvider>
-    </ScrollView>
+
   );
 }
 
