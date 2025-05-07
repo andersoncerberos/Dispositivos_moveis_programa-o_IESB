@@ -1,0 +1,12 @@
+terminal
+git github
+basico javascript
+como o react native funciona
+utilizar componenetes do react native
+instalar bibliotecas
+criar componenetes
+jsx
+utilizar componenetes prontos
+configurar navegação
+criar telas
+fazer imports
