@@ -11,7 +11,7 @@ export default function NumeroAleatorio() {
     function gerar(){
         const numeroGerado = Math.round(Math.random() * 101)
         setNumeroAleatorio(numeroGerado)
-        setlistanumeros([...listadenumeros, numeroGerado])
+        setlistanumeros([...listadenumeros, numeroGerado])//esudar masi afundo sobre estar linha
     }
 
     return (
