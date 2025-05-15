@@ -35,7 +35,7 @@ export default function Volume() {
                 <Card.Content>
 
                     <Text>COMPONENTE VOLUME</Text>
-                    <Text varint='displaymedium'>VOLUME: {volume}</Text>
+                    <Text varint='displayMedium'>VOLUME: {volume}</Text>
 
                 </Card.Content>
                 <Card.Actions>

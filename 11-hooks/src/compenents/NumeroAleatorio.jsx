@@ -5,13 +5,13 @@ import { Card, Text, Button } from 'react-native-paper'
 
 export default function NumeroAleatorio() {
     //LOGICA
-    const[NumeroAleatorio,setNueroAleatorio] = useState(0)
+    const[NumeroAleatorio,setNumeroAleatorio,] = useState(0)
     const[listadenumeros,setlistanumeros] = useState([])
 
     function gerar(){
-        const numerogerado =( Math.round(Math.random) *101)
-        setNueroAleatorio(numerogerado)
-        setlistanumeros(...listadenumeros, numerogerado)
+        const numeroGerado = Math.round(Math.random() * 101)
+        setNumeroAleatorio(numeroGerado)
+        setlistanumeros([...listadenumeros, numeroGerado])
     }
 
     return (
@@ -21,7 +21,7 @@ export default function NumeroAleatorio() {
 
                 <Card.Content>
                     <Text>GERADOR DE NUMERO ALEATORIO</Text>
-                    <Text variant='displaymedium'> Numero:{NumeroAleatorio}</Text>
+                    <Text variant='displayMedium'> Numero:{NumeroAleatorio}</Text>
 
                 </Card.Content>
                 <Card.Actions>
