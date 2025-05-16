@@ -1,19 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
+import { PaperProvider } from 'react-native-paper';
+import { Ionicons } from '@expo/vector-icons'
 
 import MegaSenaScreen from './src/screens/MegaSenaScreen';
 import JogoDoBichoScreen from './src/screens/JogoDoBichoScreen';
 
+const Tab = createBottomTabNavigator()
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
+    <PaperProvider>
+      <NavigationContainer>
+        <Tab.Navigator>
 
-      <MegaSenaScreen/>
+         
+          <Tab.Screen
+            name='MegaSenaScreen'
+            component={MegaSenaScreen}
+            options={{
+              title: 'Mega senna',
+              tabBarIcon: ({ color, size }) => <Ionicons name='home' color={color} size={size} />
+            }}
+          />
 
-      <JogoDoBichoScreen/>
-
-    </View>
+          
+          <Tab.Screen
+            name='JogoDoBichoScreen'
+            component={JogoDoBichoScreen}
+            options={{
+              title: 'jogo do bicho',
+              tabBarIcon: ({ color, size }) => <Ionicons name='person' color={color} size={size} />
+            }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
 
